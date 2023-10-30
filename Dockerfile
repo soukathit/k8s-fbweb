@@ -1,5 +1,5 @@
-FROM quay.io/gauravkumar9130/ubuntu-git
-RUN apt-get update -y
-RUN apt-get install apache2 -y
+FROM quay.io/gauravkumar9130/centos
+RUN yum update -y
+RUN yum install httpd -y
 COPY fbweb/ /var/www/html/
-ENTRYPOINT service apache2 start && /bin/bash
+ENTRYPOINT service httpd start && /bin/bash
