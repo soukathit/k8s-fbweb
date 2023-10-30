@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+ name: k8s-training
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+  namespace: k8s-training
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - image: soukathit/k8s-fbweb
+        name: fbweb
+        stdin: true
+        tty: true
