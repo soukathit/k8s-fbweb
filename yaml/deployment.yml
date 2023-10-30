@@ -20,7 +20,7 @@ spec:
         app: myapp
     spec:
       containers:
-      - image: quay.io/gauravkumar9130/myweb
+      - image: quay.io/gauravkumar9130/mywebapp
         name: fbweb
         stdin: true
         tty: true
